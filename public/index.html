@@ -14,26 +14,21 @@
 		  <nav class="navbar navbar-default">
 			<div class="container-fluid">
 			  <div class="navbar-header">
-				<a class="navbar-brand" href="javascript:initXHR('home', null)">To Do</a>
+				<a class="navbar-brand" href="javascript:initXHR('home', null)">SkipTheJuice</a>
 			  </div>
 			  <div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-				  <li><a href="#">Home</a></li>
 				  <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">List<span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sports<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-					  <li><a href="#">Create</a></li>
-					  <li><a href="javascript:initXHR('lists', null)">Active</a></li>
-					  <li><a href="#">Disabled</a></li>
+					  <li><a href="#">NHL</a></li>
+					  <li><a href='#'>NBA</a></li>
+					  <li><a href="#">NFL</a></li>
+                      <li><a href='#'>MLB</a></li>
 					</ul>
 				  </li>
-				  <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shared<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-					  <li><a href="#">Active</a></li>
-					  <li><a href="#">Pending</a></li>
-					</ul>
-				  </li>
+				  <ul class="nav navbar-nav">
+                      <li><a href="#">Scores</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				  <li><a href="#">Login</a></li>
@@ -41,49 +36,12 @@
 			  </div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->
 		  </nav>
-		  
-		<div id="home">
-		  <!-- Main component for a primary marketing message or call to action -->
-		  <div class="jumbotron">
-			<h1>To Do List</h1>
-			<p>Keep track of all of things you need to do by creating lists and sharing items with friends.</p>
-			<p>
-			  <a class="btn btn-lg btn-primary" href="javascript:initXHR('lists', null)" role="button">View</a>
-			</p>
-		  </div>
-		</div>
-		
-		<div id="lists" style="display:none;">
-		</div>
-
-		<div id="gList" style="display:none;">
-			<div class="panel panel-default">
-			  <!-- Default panel contents -->
-			  <div class="panel-heading"> 
-				  <h3>List</h3>
-				  <div>
-					<a href="#"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="#"><span class="glyphicon glyphicon-trash"></span></a>
-					<a href="#"><span class="glyphicon glyphicon-ok"></span></a>
-				  </div>
-			  </div>
-				<!-- Table -->
-				<table class="table" style="font-size:10pt;">
-					<thead>
-						<tr>
-							<th>Items</th>
-							<th width="5%">Shared</th>
-							<th width="5%">Status</th>
-						</tr>
-					</thead>
-					<tbody id='tasks'>
-					</tbody>
-				</table>
+		  <div class="container">
+			<div class="row">
+			  <div class="col-lg-8" style="border:1px solid blue; height:100%">Feed</div>
+			  <div class="col-lg-4" style="border:1px solid blue; height:75%">Active Bets</div>
 			</div>
-		</div>
-		
-		</div> <!-- /container -->
-	
+		</div>	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
