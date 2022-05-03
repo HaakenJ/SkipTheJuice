@@ -1,13 +1,16 @@
 import Mongoose = require("mongoose")
 
 interface IGameModel extends Mongoose.Document {
-    gameID: number;
+    gameId: number;
     sport: string;
-    hTeam: string;
-    aTeam: string;
-    score: string;
-    moneyline: number;
-    spread: number;
-    overUnder; number;
+    homeTeam: string;
+    awayTeam: string;
+    homeTeamScore: number,
+    awayTeamScore: number,
+    homeTeamMoneyLine: number,
+    awayTeamMoneyLine: number,
+    homeTeamSpread: number,
+    awayTeamSpread: number,
+    overUnder: number
 }
 export {IGameModel}

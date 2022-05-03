@@ -13,11 +13,11 @@ var UserModel = /** @class */ (function () {
     UserModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
             userID: String,
-            fName: String,
-            lName: String,
+            firstName: String,
+            lastName: String,
             email: String,
-            SSN: String,
-            venmoID: String,
+            ssn: String,
+            venmoUserName: String,
             address: String,
             password: String,
             userWins: Number,

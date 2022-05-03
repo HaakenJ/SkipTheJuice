@@ -1,9 +1,10 @@
 import Mongoose = require("mongoose")
 
 interface IBetModel extends Mongoose.Document {
-    betID: string;
-    User: object;
-    Games: object;
+    betId: string;
+    userId1: number;
+    userId2: number;
+    gameId: number;
     betType: string;
     amount: number;
     accepted: boolean;

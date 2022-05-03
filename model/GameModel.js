@@ -12,13 +12,16 @@ var GameModel = /** @class */ (function () {
     }
     GameModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
-            gameID: String,
+            gameId: String,
             sport: String,
-            hTeam: String,
-            aTeam: String,
-            score: String,
-            moneyline: Number,
-            spread: Number,
+            homeTeam: String,
+            awayTeam: String,
+            homeTeamScore: Number,
+            awayTeamScore: Number,
+            homeTeamMoneyLine: Number,
+            awayTeamMoneyLine: Number,
+            homeTeamSpread: Number,
+            awayTeamSpread: Number,
             overUnder: Number
         });
     };
