@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var BetModel_1 = require("./model/BetModel");
 var UserModel_1 = require("./model/UserModel");
 var GameModel_1 = require("./model/GameModel");
+var crypto = require("crypto");
 // Creates and configures an ExpressJS web server.
 var App = /** @class */ (function () {
     //Run configuration methods on the Express instance.
@@ -24,24 +25,26 @@ var App = /** @class */ (function () {
     };
     // Configure API endpoints.
     App.prototype.routes = function () {
+        var _this = this;
         var router = express.Router();
-        // router.get("/app/list/:listId/count", (req, res) => {
-        //     var id = req.params.listId;
-        //     console.log("Query single list with id: " + id);
-        //     this.Tasks.retrieveTasksCount(res, {listId: id});
-        // });
-        // router.post("/app/list/", (req, res) => {
-        //   const id = crypto.randomBytes(16).toString("hex");
-        //   console.log(req.body);
-        //     var jsonObj = req.body;
-        //     jsonObj.listId = id;
-        //     this.Lists.model.create([jsonObj], (err) => {
-        //         if (err) {
-        //             console.log("object creation failed");
-        //         }
-        //     });
-        //     res.send("{"id":"" + id + ""}");
-        // });
+        router.get("/app/bets/all", function (req, res) {
+            console.log("Query for all bets");
+            _this.Bets.retreiveBetList(res);
+        });
+        router.post("/app/bets/new", function (req, res) {
+            var id = crypto.randomBytes(16).toString("hex");
+            console.log(req.body);
+            var jsonObj = req.body;
+            console.log("body: " + JSON.stringify(req.body));
+            jsonObj.betId = id;
+            console.log("bodyAfter: " + JSON.stringify(req.body));
+            _this.Bets.model.create([jsonObj], function (err) {
+                if (err) {
+                    console.log("object creation failed");
+                }
+            });
+            res.send();
+        });
         // router.post("/app/list2/", (req, res) => {
         //   const id = crypto.randomBytes(16).toString("hex");
         //   console.log(req.body);

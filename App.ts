@@ -33,24 +33,25 @@ class App {
   // Configure API endpoints.
   private routes(): void {
     let router = express.Router();
-    // router.get("/app/list/:listId/count", (req, res) => {
-    //     var id = req.params.listId;
-    //     console.log("Query single list with id: " + id);
-    //     this.Tasks.retrieveTasksCount(res, {listId: id});
-    // });
+    router.get("/app/bets/all", (req, res) => {
+        console.log("Query for all bets");
+        this.Bets.retreiveBetList(res);
+    });
 
-    // router.post("/app/list/", (req, res) => {
-    //   const id = crypto.randomBytes(16).toString("hex");
-    //   console.log(req.body);
-    //     var jsonObj = req.body;
-    //     jsonObj.listId = id;
-    //     this.Lists.model.create([jsonObj], (err) => {
-    //         if (err) {
-    //             console.log("object creation failed");
-    //         }
-    //     });
-    //     res.send("{"id":"" + id + ""}");
-    // });
+    router.post("/app/bets/new", (req, res) => {
+      const id = crypto.randomBytes(16).toString("hex");
+      console.log(req.body);
+        var jsonObj = req.body;
+        console.log("body: " + JSON.stringify(req.body));
+        jsonObj.betId = id;
+        console.log("bodyAfter: " + JSON.stringify(req.body));
+        this.Bets.model.create([jsonObj], (err) => {
+            if (err) {
+                console.log("object creation failed");
+            }
+        });
+        res.send();
+    });
 
     // router.post("/app/list2/", (req, res) => {
     //   const id = crypto.randomBytes(16).toString("hex");

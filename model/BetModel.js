@@ -20,7 +20,7 @@ var BetModel = /** @class */ (function () {
             amount: Number,
             accepted: Boolean,
             finished: Boolean
-        });
+        }, { collection: "bets" });
     };
     BetModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Bets", this.schema);

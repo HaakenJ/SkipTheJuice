@@ -18,19 +18,19 @@ class BetModel {
         this.schema = new Mongoose.Schema(
             {
                 betID: String,
-                userId1: Number,
-                userId2: Number,
-                gameId: Number,
+                userId1: String,
+                userId2: String,
+                gameId: String,
                 betType: String,
                 amount: Number,
                 accepted: Boolean,
                 finished: Boolean
-            }
-        )
+            }, {collection: "bets"}
+        );
     }
 
     public createModel(): void {
-        this.model = mongooseConnection.model<BetModel>("Bets", this.schema);
+        this.model = mongooseConnection.model<IBetModel>("Bets", this.schema);
     }
 
     public retreiveBetList(response:any): any {
