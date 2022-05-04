@@ -1,4 +1,5 @@
 db = db.getSiblingDB("skipTheJuice")
+db.dropDatabase()
 db.createCollection("bets")
 betsCollection = db.getCollection("bets")
 betsCollection.remove({})

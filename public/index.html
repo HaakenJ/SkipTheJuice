@@ -8,8 +8,6 @@
 	</head>
 	</head>
 	<body onload="initXHR('home', null)">
-		<div class="container">
-
 		  <!-- Static navbar -->
 		  <nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -29,6 +27,7 @@
 				  </li>
 				  <ul class="nav navbar-nav">
                       <li><a href="#">Scores</a></li>
+				  </ul>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				  <li><a href="#">Login</a></li>
@@ -36,12 +35,42 @@
 			  </div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->
 		  </nav>
-		  <div class="container">
+		  <div class="container-fluid">
 			<div class="row">
-			  <div class="col-lg-8" style="border:1px solid blue; height:100%">Feed</div>
-			  <div class="col-lg-4" style="border:1px solid blue; height:75%">Active Bets</div>
-			</div>
-		</div>	
+			  <div class="col-sm-8" style="border:1px solid blue; height:100%">
+				<h1 style="text-align: center;">Feed</h1>
+				<div class="col-sm-6">
+					<div class="card" style="width:100%; border: 1px solid blue;">
+						<div class="card-body" style="padding-left:10px">
+						  <h5 class="card-title">Username's bet</h5>
+						  <p class="card-text">Type:</p>
+						  <p class="card-text">Sport:</p>
+						  <p class="card-text">Game: </p>
+						  <p class="card-text">Amount:</p>
+						  <a href="#" class="btn btn-primary" style="position: relative; left:165px; bottom:5px">Accept</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card" style="width:100%; border: 1px solid blue;">
+						<div class="card-body" style="padding-left:10px">
+						  <h5 class="card-title">Username's bet</h5>
+						  <p class="card-text">Type:</p>
+						  <p class="card-text">Sport:</p>
+						  <p class="card-text">Game: </p>
+						  <p class="card-text">Amount:</p>
+						  <a href="#" class="btn btn-primary" style="position: relative; left:165px; bottom:5px">Accept</a>
+						</div>
+					</div>
+				</div>	
+			  </div>
+			
+			  <div class="col-sm-4" style="border:1px solid blue; height:75%">
+				<h1 style="text-align: center">Active Bets</h1>
+			  </div> <!-- div col-->
+			</div><!-- div row -->
+		  </div> <!-- div container -->
+			
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
