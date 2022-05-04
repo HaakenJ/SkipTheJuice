@@ -28,7 +28,7 @@ class GameModel {
                 homeTeamSpread: Number,
                 awayTeamSpread: Number,
                 overUnder: Number
-            }
+            }, {collection: "games"}
         )
     }
 

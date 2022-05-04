@@ -27,7 +27,7 @@ class UserModel {
                 password: String,
                 userWins: Number,
                 userLosses: Number
-            }
+            }, {collection: "users"}
         )
     }
 
