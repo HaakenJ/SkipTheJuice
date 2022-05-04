@@ -22,7 +22,7 @@ var UserModel = /** @class */ (function () {
             password: String,
             userWins: Number,
             userLosses: Number
-        });
+        }, { collection: "users" });
     };
     UserModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Users", this.schema);

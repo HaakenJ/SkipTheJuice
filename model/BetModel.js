@@ -31,6 +31,12 @@ var BetModel = /** @class */ (function () {
             response.json(itemArray);
         });
     };
+    BetModel.prototype.retreiveSingleBet = function (response, id) {
+        var query = this.model.findOne({ betId: id });
+        query.exec(function (err, itemArray) {
+            response.json(itemArray);
+        });
+    };
     return BetModel;
 }());
 exports.BetModel = BetModel;

@@ -23,7 +23,7 @@ var GameModel = /** @class */ (function () {
             homeTeamSpread: Number,
             awayTeamSpread: Number,
             overUnder: Number
-        });
+        }, { collection: "games" });
     };
     GameModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Games", this.schema);

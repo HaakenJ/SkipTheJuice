@@ -53,6 +53,12 @@ class App {
         res.send();
     });
 
+    router.get("/app/bets/:betId", (req, res) => {
+          var id = req.params['betId'];
+          console.log("Query single bet with id: " + id);
+          this.Bets.retreiveSingleBet(res, {betId:id});
+      });
+
     // router.post("/app/list2/", (req, res) => {
     //   const id = crypto.randomBytes(16).toString("hex");
     //   console.log(req.body);

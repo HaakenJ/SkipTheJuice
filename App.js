@@ -45,6 +45,11 @@ var App = /** @class */ (function () {
             });
             res.send();
         });
+        router.get("/app/bets/:betId", function (req, res) {
+            var id = req.params['betId'];
+            console.log("Query single list with id: " + id);
+            _this.Bets.retreiveSingleBet(res, id);
+        });
         // router.post("/app/list2/", (req, res) => {
         //   const id = crypto.randomBytes(16).toString("hex");
         //   console.log(req.body);
