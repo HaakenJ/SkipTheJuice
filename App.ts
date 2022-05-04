@@ -43,14 +43,13 @@ class App {
     // create new bet
     router.post("/app/bets/new", (req, res) => {
       const id = crypto.randomBytes(16).toString("hex");
-      console.log(req.body);
         var jsonObj = req.body;
-        console.log("body: " + JSON.stringify(req.body));
         jsonObj.betId = id;
-        console.log("bodyAfter: " + JSON.stringify(req.body));
         this.Bets.model.create([jsonObj], (err) => {
             if (err) {
                 console.log("object creation failed");
+            } else {
+                console.log("object creation successful");
             }
         });
         res.send();
