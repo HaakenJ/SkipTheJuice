@@ -17,7 +17,7 @@ class BetModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                betID: String,
+                betId: String,
                 userId1: String,
                 userId2: String,
                 gameId: String,

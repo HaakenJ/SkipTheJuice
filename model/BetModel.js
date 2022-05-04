@@ -12,10 +12,10 @@ var BetModel = /** @class */ (function () {
     }
     BetModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
-            betID: String,
-            userId1: Number,
-            userId2: Number,
-            gameId: Number,
+            betId: String,
+            userId1: String,
+            userId2: String,
+            gameId: String,
             betType: String,
             amount: Number,
             accepted: Boolean,
