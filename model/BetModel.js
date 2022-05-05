@@ -31,8 +31,8 @@ var BetModel = /** @class */ (function () {
             response.json(itemArray);
         });
     };
-    BetModel.prototype.retreiveSingleBet = function (response, id) {
-        var query = this.model.findOne({ betId: id });
+    BetModel.prototype.retreiveSingleBet = function (response, filter) {
+        var query = this.model.findOne(filter);
         query.exec(function (err, itemArray) {
             response.json(itemArray);
         });
