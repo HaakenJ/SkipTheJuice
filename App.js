@@ -26,25 +26,28 @@ var App = /** @class */ (function () {
     // Configure API endpoints.
     App.prototype.routes = function () {
         var _this = this;
+        // get all bets
         var router = express.Router();
         router.get("/app/bets/all", function (req, res) {
             console.log("Query for all bets");
             _this.Bets.retreiveBetList(res);
         });
+        // create new bet
         router.post("/app/bets/new", function (req, res) {
             var id = crypto.randomBytes(16).toString("hex");
-            console.log(req.body);
             var jsonObj = req.body;
-            console.log("body: " + JSON.stringify(req.body));
             jsonObj.betId = id;
-            console.log("bodyAfter: " + JSON.stringify(req.body));
             _this.Bets.model.create([jsonObj], function (err) {
                 if (err) {
                     console.log("object creation failed");
                 }
+                else {
+                    console.log("object creation successful");
+                }
             });
             res.send();
         });
+        // get a bet by id
         router.get("/app/bets/:betId", function (req, res) {
             var id = req.params['betId'];
             console.log("Query single bet with id: " + id);

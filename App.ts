@@ -32,27 +32,30 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
+    
+    // get all bets
     let router = express.Router();
     router.get("/app/bets/all", (req, res) => {
         console.log("Query for all bets");
         this.Bets.retreiveBetList(res);
     });
 
+    // create new bet
     router.post("/app/bets/new", (req, res) => {
       const id = crypto.randomBytes(16).toString("hex");
-      console.log(req.body);
         var jsonObj = req.body;
-        console.log("body: " + JSON.stringify(req.body));
         jsonObj.betId = id;
-        console.log("bodyAfter: " + JSON.stringify(req.body));
         this.Bets.model.create([jsonObj], (err) => {
             if (err) {
                 console.log("object creation failed");
+            } else {
+                console.log("object creation successful");
             }
         });
         res.send();
     });
 
+    // get a bet by id
     router.get("/app/bets/:betId", (req, res) => {
           var id = req.params['betId'];
           console.log("Query single bet with id: " + id);
