@@ -47,33 +47,9 @@ var App = /** @class */ (function () {
         });
         router.get("/app/bets/:betId", function (req, res) {
             var id = req.params['betId'];
-            console.log("Query single list with id: " + id);
-            _this.Bets.retreiveSingleBet(res, id);
+            console.log("Query single bet with id: " + id);
+            _this.Bets.retreiveSingleBet(res, { betId: id });
         });
-        // router.post("/app/list2/", (req, res) => {
-        //   const id = crypto.randomBytes(16).toString("hex");
-        //   console.log(req.body);
-        //     var jsonObj = req.body;
-        //     jsonObj.listId = id;
-        //     let doc = new this.Lists.model(jsonObj);
-        //     doc.save((err) => {
-        //        console.log("object creation failed");
-        //     });
-        //     res.send("{"id":"" + id + ""}");
-        // });
-        // router.get("/app/list/:listId", (req, res) => {
-        //     var id = req.params.listId;
-        //     console.log("Query single list with id: " + id);
-        //     this.Tasks.retrieveTasksDetails(res, {listId: id});
-        // });
-        // router.get("/app/list/", (req, res) => {
-        //     console.log("Query All list");
-        //     this.Lists.retrieveAllLists(res);
-        // });
-        // router.get("/app/listcount", (req, res) => {
-        //   console.log("Query the number of list elements in db");
-        //   this.Lists.retrieveListCount(res);
-        // });
         this.expressApp.use("/", router);
         this.expressApp.use("/app/json/", express.static(__dirname + "/app/json"));
         this.expressApp.use("/images", express.static(__dirname + "/public/img"));
